@@ -1,4 +1,4 @@
-/* Temp Resources
+/* Font Resources
 font-family: 'Lato', sans-serif;
 font-family: 'Zilla Slab', serif;
 */
@@ -6,12 +6,16 @@ font-family: 'Zilla Slab', serif;
 /*————————————————————————————
 Base Styles
 ————————————————————————————*/
+*{
+  box-sizing: border-box;
+}
+
 body {
   box-sizing: border-box;
   font-size: 16px;
   font-family: 'Lato', sans-serif;
-  background: #130d29;
-  color: #a9a3c9;
+  background-color: #0f0a1f;
+  color: #b5add7;
 }
 
 h1 {
@@ -26,14 +30,15 @@ h2 {
   font-family: 'Zilla Slab', serif;
   font-weight: 400;
   margin: 0 0 -5px 0;
-  color: #16d5ff;
-  font-size: 1.5rem;
+  color: #dbd5f2;
+  font-size: 1.8rem;
 }
 
 .content-containter {
   display: flex;
+  margin: 0 auto;
   flex-direction: column;
-  padding: 20px 20px;
+  /* padding: 0 20px; */
   justify-content: center;
 }
 
@@ -41,33 +46,189 @@ h2 {
   text-align: center;
 }
 
+
+
 /*————————————————————————————
 Header
 ————————————————————————————*/
-header{
+header {
   color: white;
   background-color: #1f1540;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  /* border-bottom: 1px solid #16d5ff; */
+  justify-content: space-between;
+  padding: 20px 15px;
+  border-bottom: 2px solid #25194f;
 }
 
 .logo {
+  display: flex;
+}
+
+header h1 {
+  font-size: 1.5rem;
+}
+
+.icon {
+  margin-right: 5px;
+  font-size: 1.5rem;
+  color: #16d5ff;
+}
+
+.menu {
   margin-right: 10px;
   font-size: 1.7rem;
   color: #16d5ff;
+  justify-content: flex-end;
 }
 
 /*————————————————————————————
 Intro
 ————————————————————————————*/
 .intro {
-  padding: 1.5rem 0 1.7rem 0;
-  border-bottom: 2px dotted #16d5ff;
+  padding: 3rem 20px;
+  background-color: #0f0a1f;
+  font-family: 'Zilla Slab', serif;
+  font-size: 18px;
+}
+
+.intro p {
+  color: #dbd5f2;
 }
 
 /*————————————————————————————
 Form
 ————————————————————————————*/
+
+form {
+  padding: 1.7rem 20px;
+  background: #150e2d;
+  border-top: 2px dashed #25194f;
+  border-bottom: 2px dashed #25194f;
+}
+
+legend {
+  font-family: 'Zilla Slab', serif;
+  font-weight: 400;
+  color: #16d5ff;
+  font-size: 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+fieldset {
+  border: 0;
+  padding: 0.01em 0 0 0;
+  margin: 0 0 1.5rem 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea,
+select {
+  margin: 10px 0 1.8rem 0;
+  height: 45px;
+  width: 100%;
+  padding: 0 15px;
+  background-color: #1f1540;
+  border: 1px solid #25194f;
+  color: white;
+  border-radius: 5px;
+  transition: all .20s ease-in;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline-color: #16d5ff;
+  outline-width: medium;
+  color: #16d5ff;
+  caret-color: #16d5ff;
+  background-color: #25194f;
+}
+
+::placeholder {
+  color: #504086;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin: 0 10px 0 0;
+    height: auto;
+    width: auto;
+    padding: 0;
+}
+
+textarea {
+  min-height: 10rem;
+  padding: 15px;
+  resize: vertical;
+}
+
+.newsletter {
+  margin-bottom: 1rem;
+  font-family: 'Zilla Slab', serif;
+  font-size: 18px;
+  color: #dbd5f2;
+}
+
+.format {
+  margin-top: 2.5rem;
+}
+
+
+#name::placeholder,
+#email::placeholder {
+  font-size: .9rem;
+  text-align: right;
+  font-style: italic;
+}
+
+#zip {
+  width: 120px;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #16d5ff;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #16c1e7;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: .4;
+}
+
+
+/*————————————————————————————
+768 Media Query
+————————————————————————————*/
+@media screen and (min-width: 768px) {
+  .content-containter {
+    max-width: 600px;
+  }
+
+  form {
+    padding: 50px 50px;
+    margin-bottom: 20px;
+    box-shadow: -24px 1px 126px -21px rgba(3,1,15,1);
+    -webkit-box-shadow: -24px 1px 126px -21px rgba(3,1,15,1);
+    -moz-box-shadow: -24px 1px 126px -21px rgba(3,1,15,1);
+  }
+
+
+  #tel {
+    max-width: 150px;
+  }
+
+}
